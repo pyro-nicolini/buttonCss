@@ -1,0 +1,94 @@
+.boton {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    border-radius: 20px;
+    background-color: #a38fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.boton::before {
+    content: ""; /*necesario para que aparezca el elemento*/
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    transition: transform 0.5s;
+  }
+  
+  .boton.active {
+    background-color: #ff00c3;
+  }
+  
+  .boton.active::before {
+    transform: translateX(17px);
+  }
+
+
+
+
+  .botonAnimado {
+    position: relative;
+    width: 40px;
+    height: 24px;
+    border-radius: 20px;
+    /* background-color: #a38fff; */
+    border: 1px solid black;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-left: 10px;
+    animation: fondoAnimado 8s ease-in-out infinite;
+}
+
+.botonAnimado::before {
+    display: flex; /* solo para centrar el string */
+    align-items: center; /* solo para centrar el string */
+    justify-content: center; /* solo para centrar el string */
+    text-align: center;
+    font-size: .3rem; /* string */
+    content: ""; /* usar sin string */
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    transition: transform 0.5s;
+    animation: botonAnimado 8s ease-in-out infinite;
+  }
+  
+  .botonAnimado.active {
+    background-color: #ff00c3;
+  }
+  
+  .botonAnimado.active::before {
+    transform: translateX(17px);
+  }
+
+  @keyframes botonAnimado {
+    0%, 100% {
+      transform: translateX(0);
+      content: "ON";
+    }
+    50% {
+        content: "OFF";
+        transform: translateX(17px);
+    }
+  }
+  @keyframes fondoAnimado {
+    0%, 100% {
+      background-color: aquamarine;
+    }
+    50% {
+      background-color: #ff00c3;
+    }
+  }
+
